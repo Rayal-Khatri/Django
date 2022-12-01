@@ -12,7 +12,7 @@ def index(request):
 # Create your views here.
 
 def counter(request):
-    text=request.POST['text']
+    text=request.POST['text']          #Post is for private data  
     no_of_words = len(text.split())
     context={
         'words' : no_of_words,
