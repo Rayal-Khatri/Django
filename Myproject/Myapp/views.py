@@ -12,6 +12,10 @@ def index(request):
 # Create your views here.
 
 def counter(request):
-    text=request.GET['text']
+    text=request.POST['text']
     no_of_words = len(text.split())
-    return render(request,'count.html',{'words' : no_of_words})
+    context={
+        'words' : no_of_words,
+        'content' : text
+    }
+    return render(request,'count.html',context)
