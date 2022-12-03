@@ -66,21 +66,13 @@
     <section class="testimonials">
         <div class="container">
             <ul>
+                {% for person in persons %}
                 <li>
                     <img src="{% static 'img/person.jpg' %}" alt="Person">
-                    <blockquote>"This app is super useful and helpful for users that lack advanced knowledge in photo editing. I liked how user-friendly the app is. I would recommend this app to anyone who is looking for a quick and easy way to crop and edit videos."</blockquote>
-                    <cite>-Dipak Giri</cite>
+                    <blockquote>"{{person.comment}}"</blockquote>
+                    <cite>-{{person.name}}</cite>
                 </li>
-                <li>
-                    <img src="{% static 'person.jpg' %}" alt="Person">
-                    <blockquote>"Amazing app.  There are so many workouts to choose from.  It’s impossible to get bored. They eliminate any excuses because there are workouts for all levels, all time frames, no equipment options, small space options, and even options to have your kids join you. I truly love this app and have had several friends join as well."</blockquote>
-                    <cite>-Raj Shahi</cite>
-                </li>
-                <li>
-                    <img src="{% static 'img/person2.jpg' %}" alt="Person">
-                    <blockquote>"Awesome app.....Love the easy features."</blockquote>
-                    <cite>-UshaKiran Khatri</cite>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </section>
