@@ -21,10 +21,10 @@ def index(request):
     persons =[person1,person2,person3,person4]
     return render(request,'index.html',{'persons':persons})
 
-def info(request):
+def counter(request):
     name = request.POST['name']
     message = request.POST['message']
-    return render(request,'<h1> Your Response was recorded</h1>')
+    return render(request,'responce.html',{'name':name,'msg':message})
 # def counter(request):
 #     text=request.POST['text']          #Post is for private data  
 #     no_of_words = len(text.split())
