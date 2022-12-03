@@ -1,4 +1,109 @@
 {% load static %}
-<link rel="stylesheet" href="{%static 'style.css' %}">
-<h1>This is the front page</h1>
-<img src="{%static 'img.jpg' %}" alt="">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookBazar</title>
+    <link rel="stylesheet" href="{% static 'notmain.css'%}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a href="#" class="logo ">Book<span>Bazar</span></a>
+        
+            <img id="mobile-cta" class="mobile-menu" src="{% static 'menu.svg' %}" alt="Hamburger Menu">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit"src="{% static 'exit.svg' %}" alt="Close">
+                <ul class="primary-nav">
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+                <ul class="secondary-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li class="go-premiun-cta"><a href="#">Go Premiun</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>  
+
+    <section class="hero">
+        <div class="container">
+            <div class="left-col">
+                <p class="subhead">Explore &amp; Find Books</p>
+                <h1>A Book App to Save Time and Money</h1>
+
+                <div class="hero-cta">
+                    <a href="#" class="primary-cta">Get Started</a>
+                    <a href="#" class="watch-video-cta">
+                        <img src="{% static 'watch.svg' %}" alt="Video">Video of App Features
+                    </a>
+                    
+                </div>
+            </div>
+
+            <img src="{% static 'illustration.svg' %}" alt="Illustrarion" class="hero-img">
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <ul class="features-list">
+                <li>Unlimited Books</li>
+                <li>Easy to Use and Tutorials avaliable</li>
+                <li>Free Registration</li>
+                <li>Lend or Sell Books you have</li>
+                <li>Rent or Buy Books you want</li>
+                <li>Other Awesome Features</li>
+            </ul>
+            <img src="{% static 'holding-phone.jpg' %}" alt="Man Holding Phone">
+        </div>
+    </section>      
+
+    <section class="testimonials">
+        <div class="container">
+            <ul>
+                <li>
+                    <img src="{% static 'person.jpg' %}" alt="Person">
+                    <blockquote>"This app is super useful and helpful for users that lack advanced knowledge in photo editing. I liked how user-friendly the app is. I would recommend this app to anyone who is looking for a quick and easy way to crop and edit videos."</blockquote>
+                    <cite>-Dipak Giri</cite>
+                </li>
+                <li>
+                    <img src="{% static 'person.jpg' %}" alt="Person">
+                    <blockquote>"Amazing app.  There are so many workouts to choose from.  It’s impossible to get bored. They eliminate any excuses because there are workouts for all levels, all time frames, no equipment options, small space options, and even options to have your kids join you. I truly love this app and have had several friends join as well."</blockquote>
+                    <cite>-Raj Shahi</cite>
+                </li>
+                <li>
+                    <img src="{% static 'person2.jpg' %}" alt="Person">
+                    <blockquote>"Awesome app.....Love the easy features."</blockquote>
+                    <cite>-UshaKiran Khatri</cite>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-left">
+                <h2>Contact</h2>
+
+                <form action="">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    
+                    <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    
+                    <input type="submit" class="send-message-cta" value="Send Message">
+                </form>
+            </div>
+            <div class="contact-right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.1818974803923!2d85.3256648!3d27.6807724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19c795792897%3A0xd2064f344bb0abd!2z4KSy4KSy4KS_4KSk4KSq4KWB4KSwIOCkh-CkqOCljeCknOCkv-CkqOCkv-Ckr-CksOCkv-CkmSDgpJXgpLLgpYfgpJw!5e0!3m2!1sne!2snp!4v1656517428476!5m2!1sne!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
