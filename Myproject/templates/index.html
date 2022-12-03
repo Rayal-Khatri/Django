@@ -82,14 +82,15 @@
             <div class="contact-left">
                 <h2>Contact</h2>
 
-                <form action="">
+                <form method ="post" action="info">
+                    {% csrf_token %}
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name">
                     
                     <label for="message">Message</label>
                         <textarea name="message" id="message" cols="30" rows="10"></textarea>
                     
-                    <input type="submit" class="send-message-cta" value="Send Message">
+                    <input type="submit"/ class="send-message-cta" value="Send Message">
                 </form>
             </div>
             <div class="contact-right">
