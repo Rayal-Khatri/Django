@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . models import Features 
+from . models import Namesofpeople 
+
 def index(request):
     features = Features.objects.all()
-    return render(request,'index.html',{'persons':features})
+    Namesofpep = Namesofpeople.objects.all()
+    return render(request,'index.html',{'persons':features,'names':Namesofpep})
 
 def counter(request):
     name = request.POST['name']

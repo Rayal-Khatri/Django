@@ -48,21 +48,16 @@
             <img src="{% static 'img/illustration.svg' %}" alt="Illustrarion" class="hero-img">
         </div>
     </section>
-
     <section class="features-section">
         <div class="container">
             <ul class="features-list">
-                <li>Unlimited Books</li>
-                <li>Easy to Use and Tutorials avaliable</li>
-                <li>Free Registration</li>
-                <li>Lend or Sell Books you have</li>
-                <li>Rent or Buy Books you want</li>
-                <li>Other Awesome Features</li>
+                {%for name in names %}
+                <li>{{name.First_Name}} {{name.Last_Name}} of age {{name.Age}} says "{{name.Description}}</li>
+                {% endfor %}
             </ul>
             <img src="{% static 'img/holding-phone.jpg' %}" alt="Man Holding Phone">
         </div>
     </section>      
-
     <section class="testimonials">
         <div class="container">
             <ul>
