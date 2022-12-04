@@ -1,8 +1,7 @@
 from django.db import models
 
-class People:
-    id : int
-    name : str
-    comment : str
+class Features(models.model):
+    name=models.CharField(max_length=100)
+    details=models.CharField(max_length=500)
 
 # Create your models here.
