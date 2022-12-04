@@ -69,7 +69,7 @@
                 {% for person in persons %}
                 <li>
                     <img src="{% static 'img/person.jpg' %}" alt="Person">
-                    <blockquote>"{{person.comment}}"</blockquote>
+                    <blockquote>"{{person.details}}"</blockquote>
                     <cite>-{{person.name}}</cite>
                 </li>
                 {% endfor %}
