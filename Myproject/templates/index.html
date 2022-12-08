@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookBazar</title>
-    <link rel="stylesheet" href="{% static 'css/notmain.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Main.css'%}">
 </head>
 <body>
     <div class="navbar">
         <div class="container">
             <a href="#" class="logo ">Book<span>Bazar</span></a>
-        
-            <img id="mobile-cta" class="mobile-menu" src="{% static 'img/menu.svg' %}" alt="Hamburger Menu">
-
+            <!-- <img id="mobile-cta" class="mobile-menu" src="{% static 'img/menu.svg' %}" alt="Hamburger Menu"> -->
+            {% if user.is_authenticated %}
+            <a href="logout" id="Btn">Logout</a>
+            {%else%}
+            <a href="login">Login/Signup</a>
+            {%endif%}
             <nav>
                 <img id="mobile-exit" class="mobile-menu-exit"src="{% static 'exit.svg' %}" alt="Close">
                 <ul class="primary-nav">

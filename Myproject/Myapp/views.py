@@ -43,6 +43,9 @@ def register(request):
 def login(request):
     return render(request,'login.html')
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 # def counter(request):
 #     text=request.POST['text']          #Post is for private data  
 #     no_of_words = len(text.split())

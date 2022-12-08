@@ -12,10 +12,21 @@ body {
   margin: 0;
   font-family: "Comic Neue", sans-serif;
 }
+button
+{
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  border: 2px solid var(--primary-color);
+  padding: 10px 10px;
+}
 
 .navbar {
   background-color: white;
   padding: 1em;
+}
+.container nav
+{
+  display: none;
 }
 .navbar .logo {
   text-decoration: none;
@@ -24,11 +35,9 @@ body {
   font-size: 1.5em;
 }
 .navbar .logo span {
-  color: var(--primary-color);
+  color: red;
 }
-.navbar nav {
-  display: none;
-}
+
 .navbar .container {
   display: flex;
   place-content: space-between;
