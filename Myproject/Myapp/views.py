@@ -46,11 +46,9 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def post(request,pk):
+    return render(request,'post.html',{'pk':pk})
 # def counter(request):
 #     text=request.POST['text']          #Post is for private data  
-#     no_of_words = len(text.split())
-#     context={
-#         'words' : no_of_words,
-#         'content' : text
-#     }
 #     return render(request,'count.html',context)
