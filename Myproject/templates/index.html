@@ -1,100 +1,21 @@
-{% load static %}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookBazar</title>
-    <link rel="stylesheet" href="{% static 'css/Main.css'%}">
+    <title>Blog HomePage</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="container">
-            <a href="#" class="logo ">Book<span>Bazar</span></a>
-            <!-- <img id="mobile-cta" class="mobile-menu" src="{% static 'img/menu.svg' %}" alt="Hamburger Menu"> -->
-            {% if user.is_authenticated %}
-            <a href="logout" id="Btn">Logout</a>
-            {%else%}
-            <a href="login">Login/Signup</a>
-            {%endif%}
-            <nav>
-                <img id="mobile-exit" class="mobile-menu-exit"src="{% static 'exit.svg' %}" alt="Close">
-                <ul class="primary-nav">
-                    <li class="current"><a href="#">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                </ul>
-                <ul class="secondary-nav">
-                    <li><a href="#">Contact</a></li>
-                    <li class="go-premiun-cta"><a href="#">Go Premiun</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>  
-
-    <section class="hero">
-        <div class="container">
-            <div class="left-col">
-                <p class="subhead">Explore &amp; Find Books</p>
-                <h1>A Book App to Save Time and Money</h1>
-
-                <div class="hero-cta">
-                    <a href="#" class="primary-cta">Get Started</a>
-                    <a href="#" class="watch-video-cta">
-                        <img src="{% static 'img/watch.svg' %}" alt="Video">Video of App Features
-                    </a>
-                    
-                </div>
-            </div>
-
-            <img src="{% static 'img/illustration.svg' %}" alt="Illustrarion" class="hero-img">
-        </div>
-    </section>
-    <section class="features-section">
-        <div class="container">
-            <ul class="features-list">
-                {%for name in names %}
-                <li>{{name.First_Name}} {{name.Last_Name}} of age {{name.Age}} says "{{name.Description}}</li>
-                {% endfor %}
-            </ul>
-            <img src="{% static 'img/holding-phone.jpg' %}" alt="Man Holding Phone">
-        </div>
-    </section>      
-    <section class="testimonials">
-        <div class="container">
-            <ul>
-                {% for person in persons %}
-                <li>
-                    <img src="{% static 'img/person.jpg' %}" alt="Person">
-                    <blockquote>"{{person.details}}"</blockquote>
-                    <cite>-{{person.name}}</cite>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-left">
-                <h2>Contact</h2>
-
-                <form method ="POST" action="counter">
-                    {% csrf_token %}
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name">
-                    
-                    <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                    
-                    <input type="submit"/ class="send-message-cta" value="Send Message">
-                </form>
-            </div>
-            <div class="contact-right">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.1818974803923!2d85.3256648!3d27.6807724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19c795792897%3A0xd2064f344bb0abd!2z4KSy4KSy4KS_4KSk4KSq4KWB4KSwIOCkh-CkqOCljeCknOCkv-CkqOCkv-Ckr-CksOCkv-CkmSDgpJXgpLLgpYfgpJw!5e0!3m2!1sne!2snp!4v1656517428476!5m2!1sne!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
+    <h1 style="text-align: center;">Welcome to my Blog Site</h1><br>
+    {% for post in posts%}
+    <div class="container" style="background: grey; margin: 4px; padding: 2px;">
+        <h2>
+            <a href="#" style="text-decoration: none; color: black;">{{post.title}}</a><br>
+        </h2>
+        <p class="date">{{post.created}}</p>
+        <p>{{post.body|truncatewords:20}}</p>    
+    </div>
+    {% endfor %}
 </body>
-</html>

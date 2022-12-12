@@ -3,12 +3,11 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from . models import Features 
-from . models import Namesofpeople 
+from . models import Namesofpeople ,Post
 
 def index(request):
-    features = Features.objects.all()
-    Namesofpep = Namesofpeople.objects.all()
-    return render(request,'index.html',{'persons':features,'names':Namesofpep})
+    posts = Post.objects.all()
+    return render(request,'index.html',{'posts':posts})
 
 def counter(request):
     name = request.POST['name']
