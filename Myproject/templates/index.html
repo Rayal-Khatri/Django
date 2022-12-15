@@ -12,7 +12,7 @@
     {% for post in posts%}
     <div class="container" style="background: grey; margin: 4px; padding: 2px;">
         <h2>
-            <a href="#" style="text-decoration: none; color: black;">{{post.title}}</a><br>
+            <a href="/post/{{post.id}}" style="text-decoration: none; color: black;">{{post.title}}</a><br>
         </h2>
         <p class="date">{{post.created}}</p>
         <p>{{post.body|truncatewords:20}}</p>    

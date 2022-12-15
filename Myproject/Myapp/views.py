@@ -47,7 +47,8 @@ def logout(request):
     return redirect('/')
 
 def post(request,pk):
-    return render(request,'post.html',{'pk':pk})
+    posts = Post.objects.get(id=pk)
+    return render(request,'post.html',{'post':posts})
 # def counter(request):
 #     text=request.POST['text']          #Post is for private data  
 #     return render(request,'count.html',context)
