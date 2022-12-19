@@ -17,6 +17,7 @@ def index(request):
 
     else:
         data={}
+        city='Enter City Name'
     return render(request,'index.html',{'data':data,'city':city} )
 # Create your views here.
 #53fbf5c1d2914764242cd964d811d1a5
