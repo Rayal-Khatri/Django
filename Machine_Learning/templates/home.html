@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Analysis</title>
+</head>
+<body>
+    <h1>Symptom Analysis</h1>
+    <form id="symptom-form" method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <label for="symptoms">Enter Symptoms:</label><br>
+        <textarea id="symptoms" name="symptoms" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
