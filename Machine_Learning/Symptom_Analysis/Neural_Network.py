@@ -42,7 +42,6 @@ def predict_diseases(test_data):
         top_3_accuracies = probability[top_3_indices]
 
         result = {
-            'Symptoms': symptom,
             'Predictions': []
         }
 
@@ -55,7 +54,3 @@ def predict_diseases(test_data):
         results.append(result)
 
     return results
-
-print(predict_diseases([
-    'Pain, Dilated pupils, Cloudiness in cornea, Behavioral changes,Nasal discharge,Reluctance to open mouth wide'
-]))

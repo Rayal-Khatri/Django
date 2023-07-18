@@ -5,11 +5,52 @@
 </head>
 <body>
     <h1>Symptom Analysis</h1>
-    <form id="symptom-form" method="post" action="{% url 'home' %}">
+
+    <form method="post">
         {% csrf_token %}
         <label for="symptoms">Enter Symptoms:</label><br>
-        <textarea id="symptoms" name="symptoms" rows="4" cols="50"></textarea><br><br>
-        <input type="submit" value="Submit">
+        <input type="text" id="symptoms" name="symptoms[]" placeholder="Symptom 1"><br>
+
+        <!-- Add more input fields as needed -->
+
+        <button type="submit">Submit</button>
     </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#results').html('');
+
+                        let result = response[0];
+                        let html = `
+                            <ul>
+                        `;
+
+                        for (let j = 0; j < result.Predictions.length; j++) {
+                            let prediction = result.Predictions[j];
+                            html += `
+                                <li>
+                                    <p>Predicted Disease: ${prediction.Disease}</p>
+                                    <p>Accuracy: ${prediction.Accuracy}</p>
+                                </li>
+                            `;
+                        }
+
+                        html += `</ul>`;
+                        $('#results').append(html);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div id="results"></div>
 </body>
 </html>
