@@ -24,9 +24,9 @@ def write_to_csv(rows):
         writer.writerow(rows)
 
 def main():
-    first_item = '0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	1	1'
-    for _ in range(70):
-        temp = ["Ear Infection"] + generate_random_row(first_item)
+    first_item = ''
+    for _ in range(100):
+        temp = ["Ear Mites"] + generate_random_row(first_item)
         write_to_csv(temp)
 
 if __name__ == "__main__":
