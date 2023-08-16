@@ -10,7 +10,7 @@ def generate_random_row(x):
     random.shuffle(ones_indices)
     random.shuffle(zeros_indices)
 
-    for i in range(4):
+    for i in range(2):
         x[ones_indices[i]] = 0
 
     for i in range(20):
@@ -19,14 +19,14 @@ def generate_random_row(x):
     return x
 
 def write_to_csv(rows):
-    with open('new_dataset.csv', mode='a', newline='') as file:
+    with open('C:\\Users\\user\\Desktop\\Repositories\\Django\\Machine_Learning\\Symptoms_dataset.csv', mode='a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(rows)
 
 def main():
-    first_item = ''
+    first_item = "0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0"
     for _ in range(100):
-        temp = ["Ear Mites"] + generate_random_row(first_item)
+        temp = ["Whipworm"] + generate_random_row(first_item)
         write_to_csv(temp)
 
 if __name__ == "__main__":

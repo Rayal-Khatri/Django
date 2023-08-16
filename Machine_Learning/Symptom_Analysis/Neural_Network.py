@@ -1,56 +1,74 @@
-import csv
-import re
-import random
-from sklearn.feature_extraction.text import TfidfVectorizer
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.utils import shuffle
 from sklearn.neural_network import MLPClassifier
+import joblib
+import numpy as np
 
-def predict_diseases(test_data):
-    # Load the dataset and extract symptoms and diseases
-    with open('C:\\Users\\user\\Desktop\\Repositories\\Django\\Machine_Learning\\disease_data.csv', 'r', encoding='utf-8') as file:
-        reader = csv.reader(file)
-        next(reader)  # Skip the header row
-        data = [(', '.join(re.findall(r"'(.*?)'", row[1])), row[0]) for row in reader]
-
+def predict_top_3_diseases(user_symptoms):
+    dataset_path = 'C:\\Users\\user\\Desktop\\Repositories\\Django\\Machine_Learning\\Symptoms_dataset.csv'
+    df = pd.read_csv(dataset_path)
+    X = df.iloc[:, 1:]  # Symptoms columns
+    y = df['Disease']
+    
+    label_encoder = LabelEncoder()
+    y_encoded = label_encoder.fit_transform(y)
+    
     # Shuffle the dataset
-    random.shuffle(data)
+    shuffled_X, shuffled_y = shuffle(X, y, random_state=42)
+    
+    # Split the shuffled data into training and testing sets
+    train_X, test_X, train_y, test_y = train_test_split(
+        shuffled_X, shuffled_y, test_size=0.2, random_state=42
+    )
+    
+    # Split the dataset into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
+    
+    model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=1000, random_state=42)
+    model.fit(X_train, y_train)
+    
+    # Save the trained model to a file
+    model_filename = 'disease_prediction_model.joblib'
+    joblib.dump(model, model_filename)
+    
+    loaded_model = joblib.load(model_filename)
+    
+    num_features = len(user_symptoms)
+    input_data = np.zeros(len(X.columns))  # Initialize an array of 0s
+    
+    for symptom in user_symptoms:
+        if symptom in X.columns:
+            symptom_index = X.columns.get_loc(symptom)
+            input_data[symptom_index] = 1
+    
+    input_data = input_data.reshape(1, -1)  # Reshape the input data
+    
+    predicted_probabilities = model.predict_proba(input_data)
+    
+    # Get the indices of the top 3 predicted diseases
+    top_3_indices = predicted_probabilities.argsort()[0][-3:][::-1]
+    
+    # Reverse the encoding to obtain disease names
+    top_3_disease_names = label_encoder.inverse_transform(top_3_indices)
+    
+    # Get the top 3 probabilities
+    top_3_probabilities = predicted_probabilities[0][top_3_indices]
+    
+    top_3_predictions = []
+    
+    for disease, probability in zip(top_3_disease_names, top_3_probabilities):
+        top_3_predictions.append({
+            'Disease': disease,
+            'Probability': probability
+        })
+    
+    return top_3_predictions
 
-    # Split the dataset into symptoms and diseases
-    symptoms_list, diseases_list = zip(*data)
 
-    # Vectorize the symptoms using TF-IDF
-    vectorizer = TfidfVectorizer()
-    X = vectorizer.fit_transform(symptoms_list)
+user_symptoms = ["Circular Red Patches", "Bleeding/Bruises,Irritated", "Itchy", "Odor from Skin", "Skin Infection", "Greasy Skin"]
+predictions = predict_top_3_diseases(user_symptoms)
 
-    # Create and train the neural network model
-    model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=1000)
-    model.fit(X, diseases_list)
-
-    # Vectorize the testing data
-    test_data_vectorized = vectorizer.transform(test_data)
-
-    # Predict the diseases for the testing data
-    predictions = model.predict(test_data_vectorized)
-    probabilities = model.predict_proba(test_data_vectorized)
-
-    # Prepare the result dictionary
-    results = []
-
-    # Format the results
-    for symptom, prediction, probability in zip(test_data, predictions, probabilities):
-        top_3_indices = probability.argsort()[-3:][::-1]
-        top_3_diseases = model.classes_[top_3_indices]
-        top_3_accuracies = probability[top_3_indices]
-
-        result = {
-            'Predictions': []
-        }
-
-        for disease, accuracy in zip(top_3_diseases, top_3_accuracies):
-            result['Predictions'].append({
-                'Disease': disease,
-                'Accuracy': accuracy
-            })
-
-        results.append(result)
-
-    return results
+for prediction in predictions:
+    print(f"Predicted Disease: {prediction['Disease']}, Probability: {prediction['Probability']:.4f}")
