@@ -85,8 +85,8 @@ def predict_top_3_diseases(user_symptoms):
 train_model()
 
 # Test Symptoms
-user_symptoms = ["Circular Red Patches", "Bleeding/Bruises,Irritated", "Itchy", "Odor from Skin", "Skin Infection", "Greasy Skin"]
-predictions = predict_top_3_diseases(user_symptoms)
+# user_symptoms = ["Circular Red Patches", "Bleeding/Bruises,Irritated", "Itchy", "Odor from Skin", "Skin Infection", "Greasy Skin"]
+# predictions = predict_top_3_diseases(user_symptoms)
 
 
-print(predictions)
+# print(predictions)

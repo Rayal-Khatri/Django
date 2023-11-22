@@ -12,7 +12,7 @@ def predict_api(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         test_data = data.get('test_data', [])
-        print(test_data)
+        # print(test_data)
         # test_data=["Circular Red Patches", "Bleeding/Bruises,Irritated", "Itchy", "Odor from Skin", "Skin Infection", "Greasy Skin"]
         results = predict_top_3_diseases(test_data)
         return JsonResponse(results, safe=False)
