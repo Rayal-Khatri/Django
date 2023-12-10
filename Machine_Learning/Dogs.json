@@ -1,0 +1,94 @@
+{
+  "totalSize":4,
+  "offset":2,
+  "dogs": [
+    {
+      "name": "Buddy",
+      "shelter": "Shena Care",
+      "breed": "Golden Retriever",
+      "size": "Large",
+      "age": 3,
+      "personality": "Friendly and energetic, good with kids",
+      "health_status": {
+        "vaccinations": ["Rabies", "DHPP"],
+        "neutered": true,
+        "medical_issues": "None"
+      },
+      "history": "Rescued from a shelter, no known background",
+      "training": {
+        "obedience": "Basic commands trained",
+        "behavior": "Well-behaved, leash-trained"
+      },
+      "requirements": {
+        "ideal_home": "Active family with a yard",
+        "exercise_needs": "Regular exercise and playtime"
+      }
+    },
+    {
+      "name": "Luna",
+      "shelter": "Kathmandu Animal Treatment Center",
+      "breed": "Siberian Husky",
+      "size": "Medium",
+      "age": 2,
+      "personality": "Energetic, loves outdoor activities",
+      "health_status": {
+        "vaccinations": ["Rabies", "DHPP", "Bordetella"],
+        "neutered": true,
+        "medical_issues": "Allergies (controlled with diet)"
+      },
+      "history": "Surrendered due to owner's allergies, well cared for",
+      "training": {
+        "obedience": "Knows basic commands, needs further training",
+        "behavior": "Playful and friendly"
+      },
+      "requirements": {
+        "ideal_home": "Experienced owner, preferably with Husky breed knowledge",
+        "exercise_needs": "High, needs regular exercise and mental stimulation"
+      }
+    },
+    {
+      "name": "Max",
+      "shelter": "Animal Nepal",
+      "breed": "Labrador Retriever",
+      "size": "Large",
+      "age": 4,
+      "personality": "Gentle and affectionate",
+      "health_status": {
+        "vaccinations": ["Rabies", "DHPP", "Leptospirosis"],
+        "neutered": true,
+        "medical_issues": "Hip dysplasia (requires ongoing care)"
+      },
+      "history": "Surrendered due to owner moving, friendly and social",
+      "training": {
+        "obedience": "Knows basic commands",
+        "behavior": "Well-mannered and social"
+      },
+      "requirements": {
+        "ideal_home": "Caring family, preferably with experience in handling large breeds",
+        "exercise_needs": "Moderate exercise and daily walks"
+      }
+    },
+    {
+      "name": "Bella",
+      "shelter": "Community Dog Welfare Center",
+      "breed": "Mixed Breed",
+      "size": "Small",
+      "age": 1,
+      "personality": "Playful and affectionate",
+      "health_status": {
+        "vaccinations": ["Rabies", "DHPP", "Parvovirus"],
+        "neutered": true,
+        "medical_issues": "None"
+      },
+      "history": "Found as a stray, sweet and sociable",
+      "training": {
+        "obedience": "Learning basic commands",
+        "behavior": "Friendly and responsive"
+      },
+      "requirements": {
+        "ideal_home": "Loving home with a playful environment",
+        "exercise_needs": "Regular playtime and short walks"
+      }
+    }
+  ]
+}
