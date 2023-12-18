@@ -1,11 +1,11 @@
 {
-  "totalSize":4,
+  "totalSize":5,
   "offset":2,
   "dogs": [
-    {
+    {   
       "name": "Buddy",
       "shelter": "Shena Care",
-      "breed": "Golden Retriever",
+      "breed": "Golden Retriever" ,
       "img":"Buddy.jpg",
       "size": "Large",
       "age": 1,
@@ -91,6 +91,29 @@
       },
       "requirements": {
         "ideal_home": "Loving home with a playful environment",
+        "exercise_needs": "Regular playtime and short walks"
+      }
+    },
+    {
+      "name": "Joji",
+      "shelter": "Very Adorable",
+      "breed": "Chihuahua",
+      "img":"Joji.jpg",
+      "size": "Small",
+      "age": 2,
+      "personality": "Extremely naughty and mischievous",
+      "health_status": {
+        "vaccinations": ["Rabies", "DHPP"],
+        "neutered": true,
+        "medical_issues": "None"
+      },
+      "history": "Rescued from the streets, very energetic and playful",
+      "training": {
+        "obedience": "Still learning basic commands",
+        "behavior": "Playful and mischievous"
+      },
+      "requirements": {
+        "ideal_home": "Experienced owner who can handle a mischievous dog",
         "exercise_needs": "Regular playtime and short walks"
       }
     }

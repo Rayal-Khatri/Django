@@ -1,0 +1,58 @@
+{
+    "totalSize": 4,
+    "offset": 2,
+    "shelthers": [
+        {
+            "name": "Shena Care",
+            "location": "123 Main Street, City, Country",
+            "rating": 4.5,
+            "img":"Shenas_care.jpeg",
+            "contact": "+123456789",
+            "description": "Shena Care is committed to rescuing and caring for animals in need.",
+            "facilities": [
+                "Veterinary services",
+                "Adoption center",
+                "Training programs"
+            ]
+        },
+        {
+            "name": "Kathmandu Animal Treatment Center",
+            "location": "456 Park Avenue, City, Country",
+            "rating": 4.2,
+            "img":"Kathmandu_Animal_Treatment_center",
+            "contact": "+987654321",
+            "description": "Providing medical care and shelter to animals in Kathmandu.",
+            "facilities": [
+                "Emergency care",
+                "Rehabilitation services",
+                "Spay/neuter programs"
+            ]
+        },
+        {
+            "name": "Animal Nepal",
+            "location": "789 Elm Street, City, Country",
+            "rating": 4.8,
+            "img":"Animal_Nepal.jpg",
+            "contact": "+111222333",
+            "description": "Dedicated to the welfare of street and working animals in Nepal.",
+            "facilities": [
+                "Mobile clinics",
+                "Education programs",
+                "Rescue operations"
+            ]
+        },
+        {
+            "name": "Community Dog Welfare Center",
+            "location": "321 Oak Lane, City, Country",
+            "rating": 4.0,
+            "img":"Community_Dog_welfare_center.jpg",
+            "contact": "+444555666",
+            "description": "Caring for community dogs and promoting responsible pet ownership.",
+            "facilities": [
+                "Vaccination drives",
+                "Rehoming initiatives",
+                "Community outreach"
+            ]
+        }
+    ]
+}
