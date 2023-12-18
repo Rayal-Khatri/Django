@@ -43,7 +43,7 @@ def dog_image(request, dog_name):
     image_extensions = ['.jpg', '.png', '.webp', '.jpeg']  # List of supported image file extensions
 
     for extension in image_extensions:
-        image_path = os.path.join(settings.STATIC_ROOT, 'Images/Dogs', f"{dog_name}{extension}")
+        image_path = os.path.join(settings.STATIC_ROOT, 'Images/Shelthers', f"{dog_name}{extension}")
         print(image_path)
         if os.path.exists(image_path):
             with open(image_path, 'rb') as f:
@@ -51,13 +51,12 @@ def dog_image(request, dog_name):
     return HttpResponseNotFound()
             
 
-def shelther_image(request, shelther_name):
-    print("i was called")
-    image_extensions = ['.jpg', '.png', '.webp','.jpeg']  # List of supported image file extensions
-    print({shelther_name}+ {extension})
+def Shelther_image(request, Shelther_name):
+    image_extensions = ['.jpg', '.png', '.webp', '.jpeg']  # List of supported image file extensions
 
     for extension in image_extensions:
-        image_path = os.path.join(settings.STATIC_ROOT, 'Image/Shelthers', f"{shelther_name}{extension}")
+        image_path = os.path.join(settings.STATIC_ROOT, 'Images/Shelthers', f"{Shelther_name}{extension}")
+        print(image_path)
         if os.path.exists(image_path):
             with open(image_path, 'rb') as f:
                 return HttpResponse(f.read(), content_type=f"Image/{extension[1:]}")
