@@ -40,24 +40,18 @@ def Shelthers(request):
     
 
 def dog_image(request, dog_name):
-    image_extensions = ['.jpg', '.png', '.webp', '.jpeg']  # List of supported image file extensions
-
-    for extension in image_extensions:
-        image_path = os.path.join(settings.STATIC_ROOT, 'Images/Shelthers', f"{dog_name}{extension}")
-        print(image_path)
-        if os.path.exists(image_path):
-            with open(image_path, 'rb') as f:
-                return HttpResponse(f.read(), content_type=f"Image/{extension[1:]}")
+    image_path = os.path.join(settings.STATIC_ROOT, 'Images/Dogs', f"{dog_name}")
+    print(image_path)
+    if os.path.exists(image_path):
+        with open(image_path, 'rb') as f:
+            return HttpResponse(f.read(), content_type=f"Image")
     return HttpResponseNotFound()
             
 
 def Shelther_image(request, Shelther_name):
-    image_extensions = ['.jpg', '.png', '.webp', '.jpeg']  # List of supported image file extensions
-
-    for extension in image_extensions:
-        image_path = os.path.join(settings.STATIC_ROOT, 'Images/Shelthers', f"{Shelther_name}{extension}")
-        print(image_path)
-        if os.path.exists(image_path):
-            with open(image_path, 'rb') as f:
-                return HttpResponse(f.read(), content_type=f"Image/{extension[1:]}")
+    image_path = os.path.join(settings.STATIC_ROOT, 'Images/Shelthers', f"{Shelther_name}")
+    print(image_path)
+    if os.path.exists(image_path):
+        with open(image_path, 'rb') as f:
+            return HttpResponse(f.read(), content_type=f"Image")
     return HttpResponseNotFound()

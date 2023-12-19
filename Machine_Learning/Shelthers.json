@@ -1,7 +1,7 @@
 {
     "totalSize": 4,
     "offset": 2,
-    "shelthers": [
+    "shelter": [
         {
             "name": "Shena Care",
             "location": "123 Main Street, City, Country",
@@ -19,7 +19,7 @@
             "name": "Kathmandu Animal Treatment Center",
             "location": "456 Park Avenue, City, Country",
             "rating": 4.2,
-            "img":"Kathmandu_Animal_Treatment_center",
+            "img":"Kathmandu_Animal_Treatment_Centre.jpg",
             "contact": "+987654321",
             "description": "Providing medical care and shelter to animals in Kathmandu.",
             "facilities": [
