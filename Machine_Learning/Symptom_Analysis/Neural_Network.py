@@ -6,6 +6,7 @@ from sklearn.neural_network import MLPClassifier
 import joblib
 import numpy as np
 import warnings
+from sklearn.metrics import accuracy_score
 
 
 def train_model():
